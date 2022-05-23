@@ -1,2 +1,2 @@
 # cli
- CLI utilities for cinnamon
+ CLI utilities for maple
