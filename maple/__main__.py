@@ -67,7 +67,7 @@ def bind():
 
     maple_log("Creating bindings...")
 
-    os.system(f"{sys.executable} vanilla/main.py")
+    os.system(f"{sys.executable} vanilla/vanilla/main.py")
     
     maple_log("Done!")
 
