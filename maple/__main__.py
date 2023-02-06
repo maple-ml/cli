@@ -61,7 +61,7 @@ def build(quiet, run, copy, gdpath=None, dllpath="cinnamon.dll"):
 # command for creating bindings
 @maple.command()
 def bind():
-    if not os.path.exists("vanilla") or not os.path.exists("vanilla/main.py"):
+    if not os.path.exists("vanilla") or not os.path.exists("vanilla/vanilla/main.py"):
         maple_log("Couldn't find the bindings directory, are you in the right directory?")
         return
 
