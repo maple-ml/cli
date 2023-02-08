@@ -35,7 +35,7 @@ def build(quiet, run, copy, gdpath=None, dllpath="cinnamon.dll"):
     if code:
         maple_log("Build failed.")
         maple_log("Exiting")
-        return
+        return exit(1)
     
     if copy and (os.getenv("GDPATH") or gdpath):
         # cmd line arg has higher priority if both
@@ -63,7 +63,7 @@ def build(quiet, run, copy, gdpath=None, dllpath="cinnamon.dll"):
 def bind():
     if not os.path.exists("vanilla") or not os.path.exists("vanilla/vanilla/main.py"):
         maple_log("Couldn't find the bindings directory, are you in the right directory?")
-        return
+        return exit(1)
 
     maple_log("Creating bindings...")
 
