@@ -32,7 +32,7 @@ def build(quiet, run, copy, gdpath=None, dllpath="cinnamon.dll"):
     
     code = os.system(f"cmake --build build32 --config Release {args}")
     
-    if code:
+    if code != 0:
         maple_log("Build failed.")
         maple_log("Exiting")
         return exit(1)
@@ -67,9 +67,14 @@ def bind():
 
     maple_log("Creating bindings...")
 
-    os.system(f"{sys.executable} vanilla/vanilla/main.py")
+    code = os.system(f"{sys.executable} vanilla/vanilla/main.py")
     
-    maple_log("Done!")
+    if code == 0:
+        # success
+        maple_log("Done! Bindings generated successfully.")
+    else:
+        maple_log("Failed to create bindings.")
+        exit(code)
 
 
 if __name__ == "__main__":
