@@ -1,2 +1,2 @@
 click
-sly
+sly==0.4
